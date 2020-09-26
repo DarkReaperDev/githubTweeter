@@ -29,16 +29,11 @@ jobs:
       
       - name: grab push data
         run: |
-          COMMITS=${{ github.event.commits[0].message }}
-    
-      #- name: run python script
-       # run: |
-        #  python main.py AUTHOR DATE COMMENT
-      
-      - name: store test artifacts
-        run: |
-          echo ${COMMITS} > ./artifactsTest.txt
+          COMMITS=${{ github.event.commits }}
+          echo ${COMMITS}[0].message > artifactsTest.txt
           
+      
+      - name: store test artifacts          
       - uses: actions/upload-artifact@v2
         with:
           name: artifactsTest
