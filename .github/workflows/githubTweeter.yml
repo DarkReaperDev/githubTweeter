@@ -32,7 +32,12 @@ jobs:
           echo ${{github.event.commits[0].message}} > artifactsTest.txt    
           COMMITS=${{github.event.commits}} 
           COMMITS[1]="test"
-          echo ${#COMMITS[@]}     
+          echo ${#COMMITS[@]}  
+          
+          for var in ${COMMITS[@]}
+          do 
+          echo ${var}.message > artifactsTest.txt
+          done
           
       
       - name: store test artifacts          
