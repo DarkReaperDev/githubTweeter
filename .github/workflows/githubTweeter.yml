@@ -29,7 +29,7 @@ jobs:
       
       - name: grab push data
         run: |
-          echo "$GITHUB_CONTEXT"
+          echo $GITHUB_CONTEXT
     
       #- name: run python script
        # run: |
@@ -37,7 +37,7 @@ jobs:
       
       - name: store test artifacts
         run: |
-          echo ${COMMENT} > ./artifactsTest.txt
+          echo github.event > ./artifactsTest.txt
           
       - uses: actions/upload-artifact@v2
         with:
