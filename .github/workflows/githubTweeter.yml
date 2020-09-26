@@ -29,10 +29,7 @@ jobs:
       
       - name: grab push data
         run: |
-          AUTHOR=${{ github.event.comment.user.login }}
-          DATE=${{ github.event.comment.created_at }}
-          COMMENT=$(echo "${{ github.event.comment.body }}")
-
+          echo "$GITHUB_CONTEXT"
     
       #- name: run python script
        # run: |
@@ -45,4 +42,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: artifactsTest
-          path: ./
+          path: ./artifactsTest.txt
