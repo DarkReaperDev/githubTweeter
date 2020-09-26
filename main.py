@@ -15,6 +15,9 @@ def main():
     
     for var in argv:
         file.write(var)
+        file.write("something")
+
+    file.write("end")
 
     file.close()
 
