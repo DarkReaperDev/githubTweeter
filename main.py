@@ -13,9 +13,9 @@ def main():
     
     file = open("artifactsTest.txt", "a")
     
-    for var in argv:
+    for var in argv[1]:
         file.write(var)
-        file.write("something")
+        file.write("\n")
 
     file.write("end")
 
