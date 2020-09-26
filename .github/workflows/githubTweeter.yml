@@ -40,9 +40,9 @@ jobs:
       
       - name: store test artifacts
         run: |
-          echo hello > githubTweeter/artifactsTest.txt
+          echo hello > ./artifactsTest.txt
           
       - uses: actions/upload-artifact@v2
         with:
           name: artifact
-          path: githubTweeter/artifactsTest.txt
+          path: ./artifactsTest.txt
