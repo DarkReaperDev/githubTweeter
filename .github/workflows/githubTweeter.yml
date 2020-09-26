@@ -37,7 +37,7 @@ jobs:
       - name: run main.py
         run: |
          result="python main.py ${COMMITS}"
-         echo result
+         echo ${result}
           
           
       
