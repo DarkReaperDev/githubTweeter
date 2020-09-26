@@ -36,7 +36,7 @@ jobs:
           
       - name: run main.py
         run: |
-          for i in $(seq 1 ${{#github.event.commits[@]}})
+          for i in $(seq 1 ${#COMMITS[@]})
           do python main.py ${{github.event.commits[i].message}}
           done
           
