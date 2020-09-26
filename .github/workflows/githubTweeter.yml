@@ -30,7 +30,6 @@ jobs:
       - name: grab push data
         run: |
           COMMITS=${{ github.event.commits[0].message }}
-          echo ${COMMITS}
     
       #- name: run python script
        # run: |
