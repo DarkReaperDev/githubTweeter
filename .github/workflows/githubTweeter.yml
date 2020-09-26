@@ -36,7 +36,7 @@ jobs:
           
       - name: run main.py
         run: |
-          python main.py ${COMMITS}
+          python main.py ${github.event.commits}
           
           
       
