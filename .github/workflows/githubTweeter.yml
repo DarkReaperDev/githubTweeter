@@ -29,8 +29,9 @@ jobs:
       
       - name: grab push data
         run: |
-          echo ${#{github.event.commits[@]}}
-          echo ${{github.event.commits[0].message}} > artifactsTest.txt          
+          echo ${{github.event.commits[0].message}} > artifactsTest.txt    
+          COMMITS=${{github.event.commits}} 
+          echo ${#COMMITS[@]}     
           
       
       - name: store test artifacts          
