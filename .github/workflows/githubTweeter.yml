@@ -29,7 +29,8 @@ jobs:
       
       - name: grab push data
         run: |
-          echo ${{ github.event.commits }}
+          COMMITS = ${{ github.event.commits }}
+          echo ${COMMITS}
     
       #- name: run python script
        # run: |
@@ -37,7 +38,7 @@ jobs:
       
       - name: store test artifacts
         run: |
-          echo ${{ github.event.commits }} > ./artifactsTest.txt
+          echo ${COMMITS} > ./artifactsTest.txt
           
       - uses: actions/upload-artifact@v2
         with:
