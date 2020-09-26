@@ -30,14 +30,12 @@ jobs:
       - name: grab push data
         run: |
           echo ${{github.event.commits[0].message}} > artifactsTest.txt    
-          COMMITS=${{github.event.commits}} 
-          COMMITS[1]="test"
-          echo ${#COMMITS[@]}  
+          COMMITS=${{github.event.commits}}
           
-          for var in ${COMMITS[@]}
-          do 
-          echo ${var}.message > artifactsTest.txt
-          done
+      - name: run main.py
+        run: |
+         python main.py ${COMMITS}
+          
           
       
       - name: store test artifacts          
