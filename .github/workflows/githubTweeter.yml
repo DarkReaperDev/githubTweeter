@@ -37,7 +37,7 @@ jobs:
       
       - name: store test artifacts
         run: |
-          echo github.event > ./artifactsTest.txt
+          echo ${{ github.event.commits }} > ./artifactsTest.txt
           
       - uses: actions/upload-artifact@v2
         with:
