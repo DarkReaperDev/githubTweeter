@@ -14,6 +14,7 @@ def main():
     file = open("artifactsTest.txt", "a")
     
     file.write(argv[1])
+    file.write(something)
 
     file.write("end")
 
