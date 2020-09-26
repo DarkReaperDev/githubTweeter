@@ -40,9 +40,9 @@ jobs:
       
       - name: store test artifacts
         run: |
-          echo COMMENT > artifactsTest.txt
+          echo COMMENT > /artifactsTest.txt
           
       - uses: actions/upload-artifact@v2
         with:
           name: artifact
-          path: artifacts.txt
+          path: /artifactsTest.txt
