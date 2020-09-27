@@ -33,7 +33,9 @@ jobs:
         run: |
           echo ${{github.event.commits[0].message}} > artifactsTest.txt    
       
-          COMMITS=${{github.event.commits[*]}}
+          COMMITS=${{github.event.commits}}
+          MSG=${{github.event.commits[0] | jq -r ".message"
+          echo $MSG
           echo $COMMITS[0]
           COMMITS_SIZE=${#COMMITS[@]}
           
