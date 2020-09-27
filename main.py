@@ -2,8 +2,6 @@ import urllib3
 import json
 import sys
 
-TWITTER_API_KEY = ""
-
 def main():
     message = sys.argv[1][1:-1]
     
