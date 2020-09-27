@@ -41,7 +41,7 @@ jobs:
           echo "$i"
           #COMMITS="$(jq '.commits' $GITHUB_EVENT_PATH)"
           #echo "test"
-          MSG="$(jq '.message.commits.'"$i"'.message' $GITHUB_EVENT_PATH)"
+          MSG="$(jq '.message.commits.''"$i"''.message' $GITHUB_EVENT_PATH)"
           echo $MSG
           python main.py $MSG
           done
