@@ -35,16 +35,16 @@ jobs:
           #COMMITS=${{github.event.commits}}
           #COMMITS[1]="test"
           #echo ${#COMMITS[@]}
-          #COMMITS_SIZE=${#COMMITS[@]}
+          COMMITS_SIZE=${#COMMITS[@]}
           
       - name: run main.py
         run: |
-          #for i in $(seq 0 $COMMITS_SIZE)
-          #do 
-          #echo "$i"
-          #COMMIT=${COMMITS[$i]}
-          python main.py ${{github.event}}
-          #done
+          for ((i=0;i<=COMMITS_SIZE;i++))
+          do 
+          echo "$i"
+          echo ${{github.event.commis[$i].message}}
+          python main.py ${{github.event.commis[$i].message}}
+          done
           
           
       
