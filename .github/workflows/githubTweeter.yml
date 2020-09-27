@@ -36,13 +36,13 @@ jobs:
           
       - name: run main.py
         run: |
-          echo "$(jq '.commits.'"0"'.message' $GITHUB_EVENT_PATH)"
-          echo "$(jq '.commits.0.commit.message' $GITHUB_EVENT_PATH)"
           for ((i=0;i<=COMMITS_SIZE;i++))
           do 
           echo "$i"
           COMMITS="$(jq '.commits' $GITHUB_EVENT_PATH)"
           #echo "test"
+          MSG="$(jq '.message' $COMMITS[$i])"
+          echo $MSG
           MSG="$(jq '.commit.message' $COMMITS[$i])"
           echo $MSG
           python main.py $MSG
