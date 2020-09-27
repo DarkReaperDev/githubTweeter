@@ -29,18 +29,12 @@ jobs:
       - name: install urllib3
         run: pip install urllib3
       
-      - name: grab push data
-        run: |
-          echo ${{github.event.commits[0].message}} > artifactsTest.txt    
-          COMMITS_SIZE=${#COMMITS[@]}
-          
       - name: run main.py
         run: |
+          COMMITS_SIZE=${#COMMITS[@]}
+          
           for ((i=0;i<=COMMITS_SIZE;i++))
           do 
-          #echo "$i"
-          #COMMITS="$(jq '.commits' $GITHUB_EVENT_PATH)"
-          #echo "test"
           #echo "$(jq '.commits[0].message' $GITHUB_EVENT_PATH)"
           MSG="$(jq '.commits['"$i"'].message' $GITHUB_EVENT_PATH)"
           echo $MSG
