@@ -39,11 +39,11 @@ jobs:
           
       - name: run main.py
         run: |
-          for i in $(seq 1 $COMMITS_SIZE)
+          for i in $(seq 0 $COMMITS_SIZE)
           do 
           echo "$i"
           COMMIT=${COMMITS[$i]}
-          python main.py ${COMMIT.message}
+          python main.py "${COMMIT}.message"
           done
           
           
