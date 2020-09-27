@@ -43,7 +43,7 @@ jobs:
           do 
           echo "$i"
           COMMIT=${COMMITS[$i]}
-          python main.py "$COMMIT.message"
+          python main.py ${COMMIT.message}
           done
           
           
