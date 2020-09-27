@@ -39,7 +39,7 @@ jobs:
           
       - name: run main.py
         run: |
-          for i in "${!COMMITS[@]}"
+          for i in $(seq 1 $COMMITS_SIZE)
           do 
           echo "$i"
           COMMIT=${COMMITS[$i]}
