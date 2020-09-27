@@ -41,6 +41,7 @@ jobs:
           echo "$i"
           COMMITS="$(jq '.commits' $GITHUB_EVENT_PATH)"
           #echo "test"
+          echo "$(jq '.commits[0].message' $GITHUB_EVENT_PATH)"
           MSG="$(jq '.message' $COMMITS[$i])"
           echo $MSG
           MSG="$(jq '.commit.message' $COMMITS[$i])"
