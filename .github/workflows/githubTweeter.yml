@@ -33,7 +33,7 @@ jobs:
         run: |      
           #COMMITS=$(jq '.commits' $GITHUB_EVENT_PATH)  
           #COMMITS=( "$(jq '.commits' $GITHUB_EVENT_PATH)[@]" )
-          COMMITS_SIZE= $GITHUB_EVENT_PATH | jq '.commits | length'
+          COMMITS_SIZE=$(jq '.commits | length' $GITHUB_EVENT_PATH)
           echo $COMMITS_SIZE
           
           for ((i=0;i<COMMITS_SIZE;i++))
