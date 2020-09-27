@@ -9,8 +9,7 @@ def main():
     
 
     file.write(message)
-    file.write("\n")
-    
+    file.write("\n")    
 
     file.close()
 
