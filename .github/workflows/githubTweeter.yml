@@ -36,7 +36,7 @@ jobs:
           
       - name: run main.py
         run: |
-          echo "$(jq '.commits.0.message' $GITHUB_EVENT_PATH)"
+          echo "$(jq '.commits.'"0"'.message' $GITHUB_EVENT_PATH)"
           echo "$(jq '.commits.0.commit.message' $GITHUB_EVENT_PATH)"
           for ((i=0;i<=COMMITS_SIZE;i++))
           do 
