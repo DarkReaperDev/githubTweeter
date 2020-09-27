@@ -34,7 +34,7 @@ jobs:
           echo ${{github.event.commits[0].message}} > artifactsTest.txt    
           COMMITS=${{github.event.commits}}
           COMMITS[1]="test"
-          echo {#COMMITS[@]}
+          echo ${#COMMITS[@]}
           
       - name: run main.py
         run: |
