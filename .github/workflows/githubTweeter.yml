@@ -33,7 +33,7 @@ jobs:
         run: |
           echo ${{github.event.commits[0].message}} > artifactsTest.txt    
           #printf ${{github.event.commits[@}}
-          COMMITS=${{github.event.commits[@]}}
+          COMMITS=${{github.event.commits[*]}}
           #COMMITS[1]="test"
           #echo ${#COMMITS[@]}
           COMMITS_SIZE=${#COMMITS[@]}
