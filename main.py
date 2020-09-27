@@ -9,14 +9,12 @@ GITHUB_REPO_OWNER_NAME = "DarkReaperDev"
 GITHUB_REPO_NAME = "Code2UML"
 
 def main():
-    argv = sys.argv
+    message = sys.argv[1]
     
     file = open("artifactsTest.txt", "a")
     
-    file.write(argv[1])
-    file.write("something")
-
-    file.write("end")
+    file.write(message)
+    file.write("\n")
 
     file.close()
 
