@@ -39,8 +39,8 @@ jobs:
           for ((i=0;i<=COMMITS_SIZE;i++))
           do 
           echo "$i"
-          echo ${github.event.commits["$i"].message}
-          python main.py ${github.event.commits["$i"].message}
+          echo ${{github.event.commits["$i"].message}}
+          python main.py ${{github.event.commits["$i"].message}}
           done
           
           
