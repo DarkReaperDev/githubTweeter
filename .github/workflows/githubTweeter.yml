@@ -32,11 +32,6 @@ jobs:
       - name: grab push data
         run: |
           echo ${{github.event.commits[0].message}} > artifactsTest.txt    
-      
-          COMMITS=${{github.event.commits}}
-          MSG=${{github.event.commits[0]}} | jq "."
-          echo $MSG
-          echo $COMMITS[0]
           COMMITS_SIZE=${#COMMITS[@]}
           
       - name: run main.py
@@ -44,8 +39,8 @@ jobs:
           for ((i=0;i<=COMMITS_SIZE;i++))
           do 
           echo "$i"
-          echo ${github.event.commits[$i].message}
-          python main.py ${github.event.commits[$i].message}
+          echo ${github.event.commits["$i"].message}
+          python main.py ${github.event.commits["$i"].message}
           done
           
           
