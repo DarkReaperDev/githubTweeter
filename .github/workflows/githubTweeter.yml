@@ -30,8 +30,9 @@ jobs:
         run: pip install urllib3
       
       - name: run main.py
-        run: |          
-          COMMITS=( "$(jq '.commits' $GITHUB_EVENT_PATH)[@]" )
+        run: |      
+          COMMITS=( "${$(jq '.commits' $GITHUB_EVENT_PATH)[@]}" )   
+          #COMMITS=( "$(jq '.commits' $GITHUB_EVENT_PATH)[@]" )
           COMMITS_SIZE=${#COMMITS[@]}
           echo $COMMITS_SIZE
           
