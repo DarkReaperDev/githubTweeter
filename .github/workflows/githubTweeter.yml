@@ -39,9 +39,9 @@ jobs:
           for ((i=0;i<=COMMITS_SIZE;i++))
           do 
           echo "$i"
-          #COMMITS="$(jq '.commits' $GITHUB_EVENT_PATH)"
+          COMMITS="$(jq '.commits' $GITHUB_EVENT_PATH)"
           #echo "test"
-          MSG="$(jq '.commits.'"$i"'.message' $GITHUB_EVENT_PATH)"
+          MSG="$(jq '.message' $COMMITS[$i])"
           echo $MSG
           python main.py $MSG
           done
