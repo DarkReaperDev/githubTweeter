@@ -26,8 +26,8 @@ jobs:
         with: 
           python-version: 3.8
           
-      - name: install urllib3
-        run: pip install urllib3
+      - name: install tweepy
+        run: pip install tweepy
       
       - name: run main.py
         run: |      
