@@ -20,13 +20,13 @@ def main():
     if "//tweet" in message.lower():
 
         auth = tweepy.OAuthHandler(
-            twitter_auth_keys['consumer_key'],
-            twitter_auth_keys['consumer_secret']
+            TWITTER_API_KEY,
+            TWITTER_API_KEY_SECRET
         )
 
         auth.set_access_token(
-            twitter_auth_keys['access_token'],
-            twitter_auth_keys['access_token_secret']
+            TWITTER_ACCESS_TOKEN,
+            TWITTER_ACCESS_TOKEN_SECRET
         )
 
         api = tweepy.API(auth)
