@@ -1,6 +1,5 @@
-import urllib3
-import json
 import sys
+import tweepy
 
 def main():
     message = sys.argv[1][1:-1]
