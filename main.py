@@ -18,6 +18,31 @@ def main():
 
 
     if "//tweet" in message.lower():
+
+        auth = tweepy.OAuthHandler(
+
+            twitter_auth_keys['consumer_key'],
+
+            twitter_auth_keys['consumer_secret']
+
+        )
+
+        auth.set_access_token(
+
+            twitter_auth_keys['access_token'],
+
+            twitter_auth_keys['access_token_secret']
+
+        )
+
+        api = tweepy.API(auth)
+
+        message.replace("//Tweet", "")
+        message.replace("//tweet", "")
+
+        tweet = message
+
+        status = api.update_status(status=tweet) 
         
 
 main()
